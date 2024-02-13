@@ -16,7 +16,7 @@ declare global {
       name: string;
       email: string;
       password: string;
-      role: "Admin" | "User";
+      // role: "Admin" | "User";
     }
   }
 }
