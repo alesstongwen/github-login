@@ -27,3 +27,11 @@ export const forwardAuthenticated = (
   }
   res.redirect("/dashboard");
 };
+
+// function isAdmin(req: Request, res: Response, next: NextFunction): void {
+//   if (req.isAuthenticated() && req.user && req.user.role === "Admin") {
+//     return next();
+//   } else {
+//     res.status(403).send("Unauthorized");
+//   }
+// }
