@@ -17,6 +17,7 @@ const findOrCreateUserFromGithub = async (profile: any): Promise<any> => {
         name: profile.displayName || username,
         email: "",
         password: "",
+        role: "",
       };
       database.push(user);
     }
