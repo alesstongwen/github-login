@@ -6,9 +6,17 @@ import {
   getUserById,
 } from "../../controllers/userController";
 import { PassportStrategy } from "../../interfaces/index";
+
+// import { User as MyUser } from "../../interfaces/user";
+
+// declare global {
+//   namespace Express {
+//     interface User extends MyUser {}
+//   }
+// }
 const localStrategy = new LocalStrategy(
   {
-    usernameField: "email",
+    usernameField: "email", // 對應ejs的表單name
     passwordField: "password",
   },
   (email, password, done) => {

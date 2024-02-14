@@ -6,7 +6,6 @@ import passportMiddleware from "./middleware/passportMiddleware";
 import flash from "connect-flash";
 import dotenv from "dotenv";
 dotenv.config();
-
 const port = process.env.port || 8000;
 
 declare global {
@@ -16,7 +15,7 @@ declare global {
       name: string;
       email: string;
       password: string;
-      // role: "Admin" | "User";
+      role: string;
     }
   }
 }
@@ -48,6 +47,7 @@ app.use((req, res, next) => {
 });
 import authRoute from "./routes/authRoute";
 import indexRoute from "./routes/indexRoute";
+import { ensureAuthenticated } from "./middleware/checkAuth";
 
 // Middleware for express
 app.use(express.json());

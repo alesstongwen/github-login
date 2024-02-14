@@ -1,0 +1,33 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.name %></p>
+<p class="lead mb-3">UserID: <%= user.id %></p>
+<% if (messages !='') { %>
+<div class="alert alert-success" role="alert"><%= messages %></div>
+<% } %> <% if (sessions && sessions.length > 0) { %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Session ID</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% sessions.forEach(function(sessionInfo) { %>
+    <tr>
+      <td><%= sessionInfo.userID %></td>
+      <td><%= sessionInfo.sessionId %></td>
+      <td>
+        <a href="<%= sessionInfo.revokeLink %>" class="btn btn-danger"
+          >Revoke Session</a
+        >
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+<% } else { %>
+<p>No active sessions found.</p>
+<% } %>
+
+<a href="/auth/logout" class="btn btn-secondary">Logout</a>
