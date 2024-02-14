@@ -50,9 +50,6 @@ const userModel = {
     const user = database.find((user) => user.name === username);
     return user || null;
   },
-  adminOrUser: (role: "Admin" | "user") => {
-    return database.find((user) => user.role === role);
-  },
 };
 
 export { database, userModel };

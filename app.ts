@@ -19,11 +19,6 @@ declare global {
     }
   }
 }
-declare module "express-session" {
-  interface SessionData {
-    messages?: any;
-  }
-}
 
 const app = express();
 app.set("view engine", "ejs");
@@ -47,7 +42,6 @@ app.use((req, res, next) => {
 });
 import authRoute from "./routes/authRoute";
 import indexRoute from "./routes/indexRoute";
-import { ensureAuthenticated } from "./middleware/checkAuth";
 
 // Middleware for express
 app.use(express.json());
