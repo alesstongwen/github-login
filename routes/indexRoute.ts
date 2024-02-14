@@ -23,7 +23,6 @@ router.get("/admin", isAdmin, (req, res) => {
       const typedSessions = sessions as { [sid: string]: any };
 
       if (typedSessions) {
-        console.log(sessions);
         const activeSessions = Object.keys(typedSessions).map((sessionId) => {
           const session = typedSessions[sessionId];
           const userID = session.passport ? session.passport.user : "Unknown";

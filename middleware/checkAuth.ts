@@ -29,7 +29,7 @@ export const forwardAuthenticated = (
 };
 
 export const isAdmin = (req: Request, res: Response, next: NextFunction) => {
-  if (req.isAuthenticated() && req.user && req.user.role === "admin") {
+  if (req.isAuthenticated() && req.user.role === "admin") {
     return next();
   } else {
     res.redirect("/dashboard");
